@@ -20,7 +20,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@dad-group-1/backend-common": "^0.1.63",
+    "@dad-group-1/backend-common": "^0.1.97",
     "@modelcontextprotocol/sdk": "^1.29.0",
     "@nestjs/axios": "^4.0.1",
     "@nestjs/common": "^11.0.1",
