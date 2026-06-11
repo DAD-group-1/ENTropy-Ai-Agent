@@ -20,7 +20,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@dad-group-1/backend-common": "^0.1.63",
+    "@dad-group-1/backend-common": "^0.1.97",
     "@modelcontextprotocol/sdk": "^1.29.0",
     "@nestjs/axios": "^4.0.1",
     "@nestjs/common": "^11.0.1",
@@ -29,6 +29,8 @@
     "@nestjs/microservices": "^11.1.26",
     "@nestjs/platform-express": "^11.0.1",
     "@rekog/mcp-nest": "^1.9.10",
+    "amqp-connection-manager": "^5.0.0",
+    "amqplib": "^2.0.1",
     "axios": "^1.6.2",
     "ollama": "^0.6.3",
     "reflect-metadata": "^0.2.2",
