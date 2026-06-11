@@ -123,6 +123,9 @@ ${docsSection}
           model: this.model,
           messages,
           tools,
+          options: {
+            num_ctx: 4096 * 4
+          }
         });
 
         console.log(response);
