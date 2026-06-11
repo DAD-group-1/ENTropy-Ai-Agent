@@ -7,5 +7,3 @@ services:
     ports:
       - '3008:3008' #Microservice port
       - '3009:3009' #MCP port
-    volumes:
-      - .:/app
