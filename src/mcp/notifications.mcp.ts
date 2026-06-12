@@ -105,13 +105,13 @@ export class NotificationsMcpServer {
         .number()
         .describe('The ID of the user to receive the notification'),
       title: z.string().describe('The notification title'),
-      description: z.string().describe('The notification message content'),
+      message: z.string().describe('The notification message content'),
     }),
   })
   async createNotification(input: {
     user_id: number;
     title: string;
-    description: string;
+    message: string;
   }): Promise<string> {
     try {
       const response = await firstValueFrom(
