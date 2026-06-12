@@ -101,27 +101,17 @@ export class NotificationsMcpServer {
     name: 'create_notification',
     description: 'Create a new notification. Send targeted messages to users.',
     parameters: z.object({
-      userId: z
+      user_id: z
         .number()
         .describe('The ID of the user to receive the notification'),
       title: z.string().describe('The notification title'),
-      message: z.string().describe('The notification message content'),
-      type: z
-        .string()
-        .optional()
-        .describe('The type of notification (e.g., email, push, sms, in-app)'),
-      priority: z
-        .string()
-        .optional()
-        .describe('Priority level (low, normal, high, critical)'),
+      description: z.string().describe('The notification message content'),
     }),
   })
   async createNotification(input: {
-    userId: number;
+    user_id: number;
     title: string;
-    message: string;
-    type?: string;
-    priority?: string;
+    description: string;
   }): Promise<string> {
     try {
       const response = await firstValueFrom(
