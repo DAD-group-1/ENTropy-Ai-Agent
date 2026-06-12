@@ -30,6 +30,13 @@ export class AgentService {
     this.model = this.configService.get<string>('MODEL', 'llama3.2');
   }
 
+  async chat(userMessage: string, user: UserContext): Promise<string> {
+    console.log(user);
+    return this.userContextStore.run(user, () =>
+      this.runAgentLoop(userMessage, user),
+    );
+  }
+
   private async createMcpClient(user: UserContext): Promise<Client> {
     const client = new Client({ name: 'agent-client', version: '1.0.0' });
 
@@ -98,13 +105,6 @@ ${docsSection}
     }));
   }
 
-  async chat(userMessage: string, user: UserContext): Promise<string> {
-    console.log(user);
-    return this.userContextStore.run(user, () =>
-      this.runAgentLoop(userMessage, user),
-    );
-  }
-
   private async runAgentLoop(
     userMessage: string,
     user: UserContext,
@@ -125,8 +125,8 @@ ${docsSection}
           messages,
           tools,
           options: {
-            num_ctx: 4096 * 4
-          }
+            num_ctx: 4096 * 8,
+          },
         });
 
         console.log(response);
